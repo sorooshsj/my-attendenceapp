@@ -1,0 +1,68 @@
+﻿@model AttendanceApp.Models.rest
+@{
+    ViewBag.Title = "درخواست ماموریت";
+    Layout = "~/Views/Shared/_Layout -UserProfile.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("RestEntry", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="container form-group">
+        <div class=" radio radio-inline">
+            <label>
+                <input type="radio" name="dailyrest" checked />    مرخصی ساعتی
+
+            </label>
+        </div>
+        <div class="radio radio-inline ">
+            <label>
+                <input type="radio" name="dailyrest" />
+                مرخصی روزانه
+            </label>
+        </div>
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(d => d.startDate, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(d => d.startDate, new { @class = "form-control", placeholder = "تاریخ شروع " })
+            @Html.ValidationMessageFor(model => model.startDate, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(d => d.startTime, new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+            @Html.TextBoxFor(d => d.startTime, new { @class = "form-control", placeholder = "ساعت شروع " })
+            @Html.ValidationMessageFor(model => model.startTime, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(d => d.endDate, new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+            @Html.TextBoxFor(d => d.endDate, new { @class = "form-control", placeholder = "تاریخ پایان " })
+            @Html.ValidationMessageFor(model => model.endDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(d => d.endTime, new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+            @Html.TextBoxFor(d => d.endTime, new { @class = "form-control", placeholder = "ساعت پایان " })
+            @Html.ValidationMessageFor(model => model.endTime, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="ثبت" class="btn btn-success pull-left" />
+        </div>
+    </div>
+
+}
+
+

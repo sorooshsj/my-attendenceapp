@@ -1,0 +1,27 @@
+﻿@model IEnumerable<AttendanceApp.Models.inout>
+@{
+    /**/
+
+    ViewBag.Title = "تایم شیت روزانه";
+    Layout = "~/Views/Shared/_Layout -UserProfile.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm("DailyReport", "User"))
+{
+    @Html.AntiForgeryToken()
+    <div class="input-group">
+        <input id="date-input" name="choosendate" class="form-control" placeholder="تاریخ مورد نظر" />
+        <span class="input-group-addon">
+            <span class="fa fa-calendar"></span>
+        </span>
+    </div>
+   
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="نمایش" class="btn btn-success pull-left" />
+        </div>
+    </div>
+}

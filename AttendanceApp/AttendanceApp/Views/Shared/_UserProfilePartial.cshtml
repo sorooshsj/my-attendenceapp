@@ -1,0 +1,29 @@
+﻿@using AttendanceApp.Models
+@using Microsoft.AspNet.Identity
+
+<div class="row">
+
+    <a href="@Url.Action("IOEntry")" class="btn btn-sm btn-link">
+        <span class="fa fa-address-book"></span>
+        ثبت ورود و خروج
+    </a>
+</div>
+<div class="row">
+    <a href="@Url.Action("RestEntry" )" class="btn btn-sm btn-link">
+        <span class="fa fa-address-book"></span>
+        ثبت مرخصی
+    </a>
+</div>
+<div class="row">
+    <a href="@Url.Action("DailyReport")" class="btn btn-sm btn-link">
+        <span class="fa fa-address-book"></span>
+        تایم شیت روزانه
+    </a>
+</div>
+<div class="row">
+    <a href="@Url.Action("MonthlyReport")" class="btn btn-sm btn-link">
+        <span class="fa fa-address-book"></span>
+        تایم شیت ماهانه
+    </a>
+
+</div>

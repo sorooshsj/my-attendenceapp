@@ -1,0 +1,49 @@
+﻿@model AttendanceApp.ViewModel.UserProfileViewModel
+@{
+    ViewBag.Title = "پروفایل کاربر";
+    Layout = "~/Views/Shared/_Layout -UserProfile.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+ @*
+ ToDo check imga src path    
+ *@
+
+ 
+<table class="jumbotron">
+    <tr class="row">
+        <td class="col-md-9">
+            <div class="row">
+
+                <a href="@Url.Action("IOEntry")" class="btn  btn-link">
+                    <span class="fa fa-address-book"></span>
+                    ثبت ورود و خروج
+                </a>
+            </div>
+            <div class="row">
+                <a href="@Url.Action("RestEntry" )" class="btn  btn-link">
+                    <span class="fa fa-address-book"></span>
+                    ثبت مرخصی
+                </a>
+            </div>
+            <div class="row">
+                <a href="@Url.Action("DailyReport")" class="btn  btn-link">
+                    <span class="fa fa-address-book"></span>
+                    تایم شیت روزانه
+                </a>
+            </div>
+            <div class="row">
+                <a href="@Url.Action("MonthlyReport")" class="btn  btn-link">
+                    <span class="fa fa-address-book"></span>
+                    تایم شیت ماهانه
+                </a>
+
+            </div>
+        </td>
+        <td class="col-md-3">
+            <img src="~/image/2.jpg" class="img-circle  user-pic" />
+        </td>
+
+    </tr>
+
+</table>
