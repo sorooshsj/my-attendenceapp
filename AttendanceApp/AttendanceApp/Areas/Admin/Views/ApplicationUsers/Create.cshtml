@@ -8,7 +8,7 @@
 <h2>افزودن کارمند</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("create","ApplicationUsers",FormMethod.Post,new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     

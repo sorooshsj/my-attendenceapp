@@ -66,7 +66,7 @@ namespace AttendanceApp.Models
     public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppDbContext()
-            : base("AppDbConnection", throwIfV1Schema: false)
+            : base("AppSorooshDbConnection", throwIfV1Schema: false)
         {
         }
 

@@ -48,13 +48,15 @@ namespace AttendanceApp.Areas.Admin.Controllers
         public ActionResult Create(ApplicationUsersViewModel viewModel)
         {
 
-            //var extension = Path.GetExtension(path: viewModel.UploadedpicFile.FileName).ToLower();
+            if (viewModel.UploadedpicFile != null)
+            {
+                var extension = Path.GetExtension(path: viewModel.UploadedpicFile.FileName).ToLower();
 
-            //if (extension != ".jpg" && extension != ".png" && extension != ".gif" && extension != ".jpeg")
-            //{
-            //    ModelState.AddModelError("UploadedpicFile", "فایل ارسالی شما باید یک عکس باشد");
-            //}
-
+                if (extension != ".jpg" && extension != ".png" && extension != ".gif" && extension != ".jpeg")
+                {
+                    ModelState.AddModelError("UploadedpicFile", "فایل ارسالی شما باید یک عکس باشد");
+                }
+            }
 
             if (ModelState.IsValid)
             {
@@ -71,13 +73,16 @@ namespace AttendanceApp.Areas.Admin.Controllers
                 applicationUser.gender = viewModel.gender;
                 applicationUser.ManagerId = viewModel.ManagerId;
                 //adding pic
-                //var fileName = $"{Guid.NewGuid()}{extension}";
+                var extension = Path.GetExtension(viewModel.UploadedpicFile.FileName).ToLower();
 
-                //    var path = Path.Combine(Server.MapPath("~/Images/"), fileName);
 
-                //viewModel.UploadedpicFile.SaveAs(path);
-                //applicationUser.picPath = fileName;
-            
+                var fileName = $"{Guid.NewGuid()}{extension}";
+
+                var path = Path.Combine(Server.MapPath("~/Images/"), fileName);
+
+                viewModel.UploadedpicFile.SaveAs(path);
+                applicationUser.picPath = fileName;
+
                 db.Users.Add(applicationUser);
                 db.SaveChanges();
                 return RedirectToAction("Index");

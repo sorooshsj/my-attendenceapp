@@ -199,6 +199,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ApplicationUsersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\positionsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -334,6 +335,10 @@
     <Content Include="Areas\Admin\Views\ApplicationUsers\Details.cshtml" />
     <Content Include="Areas\Admin\Views\ApplicationUsers\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ApplicationUsers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\positions\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\positions\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\positions\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\positions\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
@@ -487,11 +492,15 @@
     <Content Include="Views\Shared\_UserProfilePartial.cshtml" />
     <Content Include="Views\User\DailyReport.cshtml" />
     <Content Include="Views\User\MonthlyReport.cshtml" />
+    <Content Include="Views\Shared\_Layout - manager.cshtml" />
+    <Content Include="Views\Manager\Index.cshtml" />
+    <Content Include="Views\Manager\RestIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Admin\" />
+    <Folder Include="Areas\Admin\Views\Posistios\" />
     <Folder Include="Areas\Admin\Views\t\" />
     <Folder Include="Views\CreateUsersViewModel\" />
   </ItemGroup>
